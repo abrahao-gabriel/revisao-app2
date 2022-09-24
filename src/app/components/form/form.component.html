@@ -1,0 +1,13 @@
+<body>
+  <h2>Tabela Price - Amortização</h2>
+  <div>
+    Presente Valor:<input class="form-control" [(ngModel)]="pv" />
+    <br />
+    Numero de Prestações:<input class="form-control" [(ngModel)]="n" />
+    <br />
+    Taxa de Juros: <input class="form-control" [(ngModel)]="i" />
+    <br />
+    Prestação: {{ getPrestacao() }}
+  </div>
+  <hr />
+</body>
