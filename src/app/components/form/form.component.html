@@ -7,7 +7,20 @@
     <br />
     Taxa de Juros: <input class="form-control" [(ngModel)]="i" />
     <br />
-    Prestação: {{ getPrestacao() }}
+    Prestação: {{ getPrestacao() | currency }}
+
+    <table class="table">
+      <tr>
+        <th>Mês</th>
+        <th>Valor</th>
+        <th>Juros</th>
+      </tr>
+      <tr></tr>
+      <tr *ngFor="let i of getMes()">
+        <td>{{ i }}</td>
+        <td>{{ getJuros(i - 1) | currency }}</td>
+      </tr>
+    </table>
   </div>
   <hr />
 </body>

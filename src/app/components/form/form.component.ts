@@ -20,6 +20,20 @@ export class FormComponent implements OnInit {
 
     let p = (pv * (Math.pow(1 + i, n) * i)) / (Math.pow(1 + i, n) - 1);
     return p;
-    
+  }
+
+  getMes() {
+    var meses = [];
+    for (var i = 1; i <= Number(this.n); i++) {
+      meses.push(i);
+    }
+    return meses;
+  }
+  getJuros(n: Number) {
+    var value = Number(this.pv);
+    for (var i = 0; i < n; i++) {
+      value = value + value * Number(this.i) - this.getPrestacao();
+    }
+    return value * Number(this.i);
   }
 }
